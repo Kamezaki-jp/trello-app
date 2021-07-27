@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const savedLists = localStorage.getItem('trello-lists')
 
-const store = new Vuex.Store({
+const store =  new Vuex.Store({
   state: {
     lists: savedLists ? JSON.parse(savedLists): [
       {
@@ -30,7 +30,7 @@ const store = new Vuex.Store({
   mutations: {
     addlist(state, payload) {
       state.lists.push({ title: payload.title, cards:[] })
-    }
+    },
   },
   actions: {
     addlist(context, payload) {
@@ -38,11 +38,7 @@ const store = new Vuex.Store({
     },
   },
   getters: {
-
-  }
-  // 大規模開発でstoreをファイル分割するときに使ったりする
-  // modules: {
-  // }
+  },
 })
 
 store.subscribe((mutation, state) => {
@@ -50,3 +46,4 @@ store.subscribe((mutation, state) => {
 })
 
 export default store
+
