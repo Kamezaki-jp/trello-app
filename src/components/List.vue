@@ -2,7 +2,7 @@
   <div class="list">
     <div class="listheader">
       <p class="list-title">{{ title }}</p>
-      <div class="deletelist" @click="remeveList">x</div>
+      <div class="deletelist" @click="removeList">x</div>
     </div>
   </div>
 </template>
